@@ -4,7 +4,7 @@ import { Link as RouterLink} from "react-router-dom"
 import { AuthLayout } from "../layout/AuthLayout"
 
 import { useForm } from "../../hooks"
-import { checkingAuthentication, startDirectSignIn, startGoogleSignIn } from "../../store/auth"
+import { startDirectSignIn, startGoogleSignIn } from "../../store/auth"
 import { useDispatch, useSelector } from "react-redux"
 import { useMemo } from "react"
 
