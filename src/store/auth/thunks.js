@@ -1,4 +1,4 @@
-import { directRegister, signInDirect, signInWithGoogle } from "../../firebase/providers";
+import { directRegister, logoutFirebase, signInDirect, signInWithGoogle } from "../../firebase/providers";
 import { checkingCredentials, login, logout } from "./authSlice";
 
 export const checkingAuthentication = ( email, password) => {
@@ -48,5 +48,17 @@ export const startFormSignUp = ({email,password,displayName}) => {
         if (!ok) return dispatch( logout({errorMessage}));
 
         dispatch(login({uid, displayName, email, photoURL}));
+    }
+}
+
+export const startLogout = () => {
+    
+    return async(dispatch) => {
+                
+        const {ok} = await logoutFirebase();
+
+        if (!ok) return dispatch( logout({errorMessage}));
+
+        dispatch(logout());
     }
 }

@@ -1,4 +1,4 @@
-import {GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword} from 'firebase/auth'
+import {GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, } from 'firebase/auth'
 import { FirebaseAuth } from './config';
 
 
@@ -79,6 +79,27 @@ export const directRegister = async({email,password,displayName}) => {
             email, 
             photoURL, 
             uid
+        }
+        
+    } catch (error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        return {
+            ok: false,
+            errorCode,
+            errorMessage
+        }
+    }
+}
+
+export const logoutFirebase = async() => {
+    
+    try {
+        
+        await FirebaseAuth.signOut();
+        return {
+            ok: true,
         }
         
     } catch (error) {
