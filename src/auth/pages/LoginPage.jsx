@@ -8,14 +8,16 @@ import { startDirectSignIn, startGoogleSignIn } from "../../store/auth"
 import { useDispatch, useSelector } from "react-redux"
 import { useMemo } from "react"
 
+const initialFormData = {
+  email: '  prueba@gmail.com',
+  password: '123456'
+}
+
 export const LoginPage = () => {
 
   const dispatch = useDispatch();
   const {status, errorMessage} = useSelector( x => x.auth);
-  const { email, password, onInputChange} = useForm({
-    email: 'prueba@gmail.com',
-    password: '123456'
-  });
+  const { email, password, onInputChange} = useForm(initialFormData);
 
   const onSubmit = (event) => {
     event.preventDefault();
