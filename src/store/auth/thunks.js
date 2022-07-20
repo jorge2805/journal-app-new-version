@@ -1,4 +1,5 @@
 import { directRegister, logoutFirebase, signInDirect, signInWithGoogle } from "../../firebase/providers";
+import { clearNotesLogOut } from "../journal";
 import { checkingCredentials, login, logout } from "./authSlice";
 
 export const checkingAuthentication = ( email, password) => {
@@ -59,6 +60,7 @@ export const startLogout = () => {
 
         if (!ok) return dispatch( logout({errorMessage}));
 
+        dispatch(clearNotesLogOut());
         dispatch(logout());
     }
 }
