@@ -6,7 +6,7 @@ import { useForm } from "../../hooks";
 import { ImageGallery } from "../components";
 import { setActiveNote, startDeletingNote, startSavingNote, startUploadingFiles } from "../../store/journal";
 
-import { DeleteOutline, SaveOutlined } from "@mui/icons-material";
+import { AddAPhoto, DeleteOutline, SaveOutlined } from "@mui/icons-material";
 import FileUploadIcon from '@mui/icons-material/FileUpload';
 import { Button, Grid, IconButton, TextField, Typography } from "@mui/material";
 
@@ -76,7 +76,7 @@ export const NoteView = () => {
                     disabled={ isSaving }
                     onClick = { () => fileInputRef.current.click()}
                 >
-                    <FileUploadIcon/>
+                    <AddAPhoto/>
                 </IconButton>
                 <Button
                     disabled={isSaving}
@@ -93,7 +93,7 @@ export const NoteView = () => {
                     variant="filled"
                     fullWidth
                     placeholder="Insert Tittle"
-                    label="Title"
+                    label="Nombre"
                     sx={{ border: 'none', mb: 1}}
                     name="title"
                     value={ title }
@@ -104,7 +104,7 @@ export const NoteView = () => {
                     variant="filled"
                     fullWidth
                     multiline
-                    placeholder="Tell me what happened today"
+                    placeholder="Describe mejor a tu mascota"
                     minRows={5}
                     sx={{ border: 'none', mb: 1}}
                     name="body"

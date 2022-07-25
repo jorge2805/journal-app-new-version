@@ -1,5 +1,5 @@
 import { Grid, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
-import { TurnedInNot } from '@mui/icons-material'
+import { Pets, TurnedInNot } from '@mui/icons-material'
 import { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { setActiveNote } from '../../store/journal';
@@ -30,7 +30,7 @@ export const SideBarItem = ({id, title = '', body = '', date, imageUrls}) => {
           onClick={ handleListItem }
         >
             <ListItemIcon>
-                <TurnedInNot/>
+                <Pets/>
             </ListItemIcon>
             <Grid container>
                 <ListItemText primary={trunkTitle}/>
