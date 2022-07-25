@@ -1,11 +1,14 @@
 {
+  "homepage": "https://github.com/jorge2805/journal-app-new-version",
   "name": "journal-app",
   "private": true,
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -14,6 +17,7 @@
     "@mui/material": "^5.8.4",
     "@reduxjs/toolkit": "^1.8.2",
     "firebase": "^9.8.4",
+    "gh-pages": "^4.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^8.0.2",
