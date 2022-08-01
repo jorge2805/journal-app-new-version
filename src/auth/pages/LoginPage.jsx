@@ -35,7 +35,7 @@ export const LoginPage = () => {
   const isAuth = useMemo( () => {return status === 'checking'},[status]);
 
   return (
-    <AuthLayout title="Login">
+    <AuthLayout title="PetSOS - Iniciar Sesión">
       <form onSubmit={onSubmit  }>
         <Grid container>
           <Grid item xs={12} sx={{mt: 2}}>
@@ -89,8 +89,9 @@ export const LoginPage = () => {
           </Grid>
 
           <Grid container direction="row" justifyContent='end'>
+            <Typography sx={{mr: 1}}>¿Aun no tienes cuenta?</Typography>
             <Link component={RouterLink} color='inherit' to="/auth/register">
-              Register
+              Registrate
             </Link>
           </Grid>
 

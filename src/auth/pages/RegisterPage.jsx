@@ -46,12 +46,12 @@ export const RegisterPage = () => {
   }
 
   return (
-    <AuthLayout title="Register">
+    <AuthLayout title="PetSOS - Registrate">
       <form onSubmit={ onSubmit }>
         <Grid container>
           <Grid item xs={12} sx={{mt: 2}}>
             <TextField
-              label="Full Name"
+              label="Nombre Completo"
               type="text"
               placeholder="your name"
               fullWidth
@@ -102,7 +102,7 @@ export const RegisterPage = () => {
                 variant="contained" 
                 fullWidth
               >
-                Register
+                Registrar
               </Button>
             </Grid>
             {/* <Grid item xs={12} sm={6}>
@@ -114,9 +114,9 @@ export const RegisterPage = () => {
           </Grid>
 
           <Grid container direction="row" justifyContent='end'>
-            <Typography sx={{mr: 1}}>Already Registered?</Typography>
+            <Typography sx={{mr: 1}}>¿Ya estas registrado?</Typography>
             <Link component={RouterLink} color='inherit' to="/auth/login">
-                Login
+                Iniciar Sesión
             </Link>
           </Grid>
 
